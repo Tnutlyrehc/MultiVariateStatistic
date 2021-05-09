@@ -41,14 +41,25 @@ If we have two locations   $${\mathbf{x} = \left(\begin{array}{rrr}x1 \\ x2\end{
 $${\mathbf{y} = \left(\begin{array}{rrr}y_1 \\ y_2\end{array}\right)}$$ we know the straight-line distance (Euclidian distance (see algorithm))
 * But that distance doesn't take statistical variablities of data into account - relatively greater varuavukutues shouldn't be accounted for queally to a small variabilities. 
 
-Given $p = 2$ and sample convariance matric $$S_n = (\begin{array}{rrr}
+Given $p = 2$ and sample convariance matrix $$S_n = (\begin{array}{rrr}
 s_{11} & 0  \\ 0 & s_{22}\end{array})$$ then
 $$ d(x,y) = \sqrt(x-y)' * S^{-1}_{n} * (x-y) = \sqrt (\frac{x_1 - y_2}{s_{11}})^2 + (\frac {x_{2} - y_{2}}{s_{22}})^2$$
+# Matrix
 
+## Matrix and vectors
 
+### Random Matrix
+* A random vector is a special case of a random matrix. 
+  + Example: 
+${\mathbf{r} = \left(\begin{array}{rrr}X_{11} \\ X_{21} \\ ... \\ X_{j1} \\ ...\\ X_{n1} \end{array}\right)}$ or $(X_{11}, X_{21}, ..., X_{j1}, ..., X_{n1})^T$
+  
+* General forms of the random matrix and its expectation matrix [See Slides Lecture2, slide 8]
+  + Note: Each row of the random matrix satisfies the same joint distribution as vector $(X_1, X_2, ..., X_p)'$
 
-sdf
+* In that case, the properties of a random matrix is determined by the random vector 
+$X = (X_1, X_2, ..., X_p)'$
 
+* Each row of $E(X)$ is $(E(X_1) = \mu_1, E(X_2) = \mu_2, ...., E(X_p) = \mu_p)$ denoted by ${\mathbf{\mu} = \left(\begin{array}{rrr}\mu_1\\ \mu_2 \\ ... \\ \mu_p \end{array}\right)}$ and referred to as (*population*) mean vector.
 
 
 
