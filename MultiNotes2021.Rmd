@@ -1,0 +1,71 @@
+---
+title: "Multivariate Statistical Analysis - Notes"
+output:
+  html_notebook: default
+  pdf_document: default
+runtime: shiny
+---
+
+
+## Introduction
+
+### The organisation of Data
+
+
+
+### Descriptive statistics
+* The "meaning" of the sample mean, is in fact the *center of data* 
+  +  In R: colMeans()
+* 1/n or 1/(n-1) also refered to as a __*sample convariance*__  
+  +  In R: cmd cov()
+* For *k* = 1, 2 ...p is refered to as *skk* as the __*sample variance*__ for attributes
+
+#### Sample covariance matrix
+Given the data matrix __*X*__ 
+* Its sample correlation matrix is a (*p x p*)-matrix
+* For each *i, k = 1, 2,...p,* there is 
+  + $\frac{S_{ik}}{\sqrt s_{ii} \sqrt s_{kk}}$
+* For each *i, k = 1, 2,...p,* there is $-1\le r_{ik} \le 1$
+
+## Statistical distance
+Given data as an *(n x p)*-matrix and any two locations $${\mathbf{x} = \left(\begin{array}{rrr}x1 \\ x2\\ ... \\ x_p \end{array}\right)}$$ and 
+$${\mathbf{y} = \left(\begin{array}{rrr}y_1 \\ y_2\\ ... \\ y_p \end{array}\right)}$$
+The statistical distance ( __Mahalanobis distance__ ) between *x* and *y* is: 
+  $$d(x, y)= {\sqrt (x-y)S^{-1}_{n}(x-y)}$$
+This can be computed with
+* mahalanobis()
+  + This example is of why column is used in AMSA.
+  + This is needed in relation of preparing the distance between $\mu_1$ and $\mu_0$ in regards of hypothesis test of the mean for a single random variable $|\mu_1 - \mu_0|$
+
+If we have two locations   $${\mathbf{x} = \left(\begin{array}{rrr}x1 \\ x2\end{array}\right)}$$ and  
+$${\mathbf{y} = \left(\begin{array}{rrr}y_1 \\ y_2\end{array}\right)}$$ we know the straight-line distance (Euclidian distance (see algorithm))
+* But that distance doesn't take statistical variablities of data into account - relatively greater varuavukutues shouldn't be accounted for queally to a small variabilities. 
+
+Given $p = 2$ and sample convariance matric $$S_n = (\begin{array}{rrr}
+s_{11} & 0  \\ 0 & s_{22}\end{array})$$ then
+$$ d(x,y) = \sqrt(x-y)' * S^{-1}_{n} * (x-y) = \sqrt (\frac{x_1 - y_2}{s_{11}})^2 + (\frac {x_{2} - y_{2}}{s_{22}})^2$$
+
+
+
+sdf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
