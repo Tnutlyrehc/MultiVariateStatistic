@@ -44,7 +44,7 @@ $${\mathbf{y} = \left(\begin{array}{rrr}y_1 \\ y_2\end{array}\right)}$$ we know 
 Given $p = 2$ and sample convariance matrix $$S_n = (\begin{array}{rrr}
 s_{11} & 0  \\ 0 & s_{22}\end{array})$$ then
 $$ d(x,y) = \sqrt(x-y)' * S^{-1}_{n} * (x-y) = \sqrt (\frac{x_1 - y_2}{s_{11}})^2 + (\frac {x_{2} - y_{2}}{s_{22}})^2$$
-# Matrix
+# Lecture 2
 
 ## Matrix and vectors
 
@@ -62,13 +62,31 @@ $X = (X_1, X_2, ..., X_p)'$
 * Each row of $E(X)$ is $(E(X_1) = \mu_1, E(X_2) = \mu_2, ...., E(X_p) = \mu_p)$ denoted by ${\mathbf{\mu} = \left(\begin{array}{rrr}\mu_1\\ \mu_2 \\ ... \\ \mu_p \end{array}\right)}$ and referred to as (*population*) mean vector.
 
 
+### Population covariance matrix
+
+Let $X = (X_1, X_2, ..., X_p)'$ is denoted by $\Sigma$ or Cov(X).
+
+* $Cov(X_1, X_2) ? E[(X_1 - \mu_1)(X_2 - \mu_2)]$ therefore $Cov(X_1, X_2) = Cov(X_2, X_1)$ and thus $\Sigma$ is symmetric
+
+* Useful results: 
+  + $Cov(X_j, X_j) = Var(X_j)$
+  + $Cov(X_i, X_i) = 0$ does **not** indicate two random variables are independent. 
+  + $Cov(X_i, X_j) = E(X_i, X_j) - E(X_i)E(X_j)$
+  + $Cov(X) = E[(X - \mu) * (X - \mu)']$
+  
+  
+### Population correlation coefficient matrix (p x p)
+* Let $\sigma_{jk} = Cov(X_j, X_k)$ then the correlation coefficient between $X_j$ and $X_k$ is $$ \rho_{jk} = \frac{\sigma_{jk}}{\sqrt\sigma_{jj}*\sigma_{kk}}$$
+
+*The population correlation coefficient matrix is a symmetric matrix. 
 
 
+### Population covariance matrix (pxp) and linear transformations
 
-..
-
-
-
+* Let $C$ be a nummeric (q x p) matrix, then we have: 
+  + $E(C * X) = C * \mu$ and $Cov(C * X) = C * \Sigma * C'$.
+  
+# Lecture 3
 
 
 
