@@ -102,6 +102,43 @@ Let $X = (X_1, X_2, ..., X_p)'$ is denoted by $\Sigma$ or Cov(X).
 $S = {(\frac{n}{n-1}) * S_n = \frac{1}{n-1}\sum_{j = 1}^{n} (X_j \overline{X})(X_j-\overline{X})'}$
 
 
+# Lecture 4 
+
+### The univariate normal distribution 
+
+* Assume a r.v. *X* satisfies a normal / Gaussian distribution
+  + Probability density function $f(x) = \frac{1}{\sqrt 2 \pi\sigma ^2}exp \{ -\frac{1}{2} (\frac{x - \mu}{\sigma})^2\}$
+  + $E(X) = \mu$ and $Var(X) = \sigma^2$
+* Estimation about $\mu$ and $\sigma$ with some given data: 
+  + confidence interval and hypothesis test
+
+
+
+
+
+
+
+
+
+___
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
