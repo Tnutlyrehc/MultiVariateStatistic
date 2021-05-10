@@ -7,7 +7,7 @@ runtime: shiny
 ---
 
 
-## Introduction
+# Introduction / Lecture 1
 
 ### The organisation of Data
 
@@ -45,8 +45,6 @@ Given $p = 2$ and sample convariance matrix $$S_n = (\begin{array}{rrr}
 s_{11} & 0  \\ 0 & s_{22}\end{array})$$ then
 $$ d(x,y) = \sqrt(x-y)' * S^{-1}_{n} * (x-y) = \sqrt (\frac{x_1 - y_2}{s_{11}})^2 + (\frac {x_{2} - y_{2}}{s_{22}})^2$$
 # Lecture 2
-
-## Matrix and vectors
 
 ### Random Matrix
 * A random vector is a special case of a random matrix. 
@@ -88,8 +86,20 @@ Let $X = (X_1, X_2, ..., X_p)'$ is denoted by $\Sigma$ or Cov(X).
   
 # Lecture 3
 
+## Notations
 
+* Having a *Random Matrix* ($X_1, X_2, ...., X_p$) and *Data Matrix* ($x_{11}, x_{12}, ...., x_{1k}, ..., x_{1p}$)
+  + Note: $X_1, X_2,...,X_n$ can be view as a random sample of $X$
+  + The random sample could be used to construct estimators for inferring the statistical properties of the joint distribution of $X$, e.g. $\mu$ and $\Sigma$
+  + Via realisation estimation is completed of this random sample (i.e. the data matrix)
 
+### Three descriptive statistics / estimators
+* Sample mean (vector) $\overline{X} = \frac{1}{n}\sum_{j = 1}^{n}X_j$ [Estimator of $\mu$]
+
+* Sample of covariance matrix $S_n = \frac{1}{n}{\sum_{j = 1}^{n}} {(\bar{X_j}-{\overline {X})({X_j}-\overline {X})}}$ is $= \frac{1}{n}\sum_{j =1}^{n} X_j X_j^´ - \overline{X} * \overline{X}'$
+
+* (Unbiassed) sample covariance matric [Estimator of $\Sigma$]
+$S = {(\frac{n}{n-1}) * S_n = \frac{1}{n-1}\sum_{j = 1}^{n} (X_j \overline{X})(X_j-\overline{X})'}$
 
 
 
