@@ -154,10 +154,19 @@ $$\begin{array}{rrr} Probability & Obsserved count & Expected count \\
 
 
 
+#### Property #4 
 
+* Let $A$ be a $(q \times p)$ numeric matrix, then
+$$AX \sim N_q(A_{\mu}, A \Sigma A')$$
+*Further we know $X \sim N_3(\mu, \Sigma)$, where $\mu = (1, 2, 1)'$ and 
+$$\Sigma = 
+\left (\begin{array}{rrr}\ 3 & -1 & 1 \\ -1 & 1 & 0 \\ 1 & 0 & 2 \end{array}\right)$$
 
-
-
+#### Summary: How to access multivariate normality
+* Test univariate normality for each marginal distribution with QQ-plot
+* Test bivariate normality for each pair of attributes (for example a matrix of scatterplots and QQ-plot) based on $(X-\mu)'\Sigma^{-1}(X -\mu)\sim x^{2}_{2}$
+* Test over all MVN using QQ-plot based on $(X - \mu)'\Sigma^{-1}(X - \mu)\sim x^{2}_{p}$
+* Linear pattern in QQ-plot can be evauluated through hypothesis test. 
 
 
 
