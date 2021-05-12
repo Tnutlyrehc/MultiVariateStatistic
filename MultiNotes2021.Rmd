@@ -82,7 +82,7 @@ Let $X = (X_1, X_2, ..., X_p)'$ is denoted by $\Sigma$ or Cov(X).
 ### Population covariance matrix (pxp) and linear transformations
 
 * Let $C$ be a nummeric (q x p) matrix, then we have: 
-  + $E(C * X) = C * \mu$ and $Cov(C * X) = C * \Sigma * C'$.
+   $$E(C * X) = C * \mu$ and $Cov(C * X) = C * \Sigma * C'$$.
   
 # Lecture 3
 
@@ -96,10 +96,10 @@ Let $X = (X_1, X_2, ..., X_p)'$ is denoted by $\Sigma$ or Cov(X).
 ### Three descriptive statistics / estimators
 * Sample mean (vector) $\overline{X} = \frac{1}{n}\sum_{j = 1}^{n}X_j$ [Estimator of $\mu$]
 
-* Sample of covariance matrix $S_n = \frac{1}{n}{\sum_{j = 1}^{n}} {(\bar{X_j}-{\overline {X})({X_j}-\overline {X})}}$ is $= \frac{1}{n}\sum_{j =1}^{n} X_j X_j^´ - \overline{X} * \overline{X}'$
+* Sample of covariance matrix $$S_n = \frac{1}{n}{\sum_{j = 1}^{n}} {(\bar{X_j}-{\overline {X})({X_j}-\overline {X})}}$$ is $$= \frac{1}{n}\sum_{j =1}^{n} X_j X_j^´ - \overline{X} * \overline{X}'$$
 
 * (Unbiassed) sample covariance matric [Estimator of $\Sigma$]
-$S = {(\frac{n}{n-1}) * S_n = \frac{1}{n-1}\sum_{j = 1}^{n} (X_j \overline{X})(X_j-\overline{X})'}$
+$$S = {(\frac{n}{n-1}) * S_n = \frac{1}{n-1}\sum_{j = 1}^{n} (X_j \overline{X})(X_j-\overline{X})'}$$
 
 
 # Lecture 4 
@@ -111,21 +111,46 @@ $S = {(\frac{n}{n-1}) * S_n = \frac{1}{n-1}\sum_{j = 1}^{n} (X_j \overline{X})(X
   + $E(X) = \mu$ and $Var(X) = \sigma^2$
 * Estimation about $\mu$ and $\sigma$ with some given data: 
   + confidence interval and hypothesis test
+* Assumption: the underlying distribution of the given data is normal distribution.
+  + How to access the normality of my data? 
+  + Univariate normality can be detected by first drawing a QQ-plot (In R: cmd qqnorm)
+  + Follow it up with a hypothesis test for linearity using correlation coefficient $r_Q$. 
+
+* $H_0$: data is normally distributed
+* Rejection regions is $r_Q$ < critical value for a given significan level of test. 
+* Sample correlation computed on normal quantile plot: 
+  + (left) $r_Q = 1.03$ and
+  + (right) $r_Q = 0.93$ with $n = 42$ Obsrve that critical value of a 5% significance
+  + left test: $0.9726 (n = 40), 0.9749 (n = 45)$ so $r_Q$ is the rejection region, so the $H_0$ is rejected. 
+* In R: 
+`df <- read.table("./Desktop/SDU/Multi Statistik/MultiStatisticNotes/T4-1-DAT", header = F)` `test <- qqnorm(df[,1], pch = 1, frame = FALSE)` `rQ <- cor(test$x, test$y)` 
+* Not all data are normally distributed. Particularly true for categorical data e.g. gender distribution of a population.  
+
+#### Multivariate normal distribution
+* Considering $X = (X_1, X_2, ..., X_p)'$ and $x = (x_1, x_2, ..., x_p)'$
+
+$$ f(x) = \frac{1}{(2\pi)^{p/2}}  exp\{-(x- \mu)'\Sigma^{-1}(x - \mu)/2\} $$
+* Where $\Sigma$ is positive definite. If the above equation is satisfied, we write $X \sim N_p(\mu, \Sigma)$ and say $X$ satisfies $p-dim$ distribution with $\mu$ and $\Sigma$
+
+* $E(X) = \mu$ $Cov(X) = \Sigma$
+
+
+#### Property #2
+
+* Assume $X \sim N_p(\mu, \Sigma)$ we have $(X - \mu)'\Sigma^{-1}(X-\mu)\sim x_{p}^{2}(\alpha)$ has probability $1-\alpha$
+
+$$\begin{array}{rrr} Probability & Obsserved count & Expected count \\
+0.25 & 17 & 10.5 \\
+0.50 & 29 & 21 \\
+0.75 & 33 & 31.5
+\end{array}$$
+* Expected number of observations versus data. *Note* $n = 42$
 
 
 
-
-
-
-
-
-
-___
-
-
-
-
-
+* Assume $X \sim N_p(\mu, \Sigma)$ and $a' = (a_1, a_2, ..., a_p)$ then we have 
+  + $a'X \sim N_p(a'\mu, a'\Sigma a)$
+  + AND in particular we have all marginal $X_i \sim N(\mu_i, \sigma_{ii})$
 
 
 
